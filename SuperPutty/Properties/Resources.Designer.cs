@@ -113,6 +113,26 @@ namespace SuperPutty.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap award_star_gold_1 {
+            get {
+                object obj = ResourceManager.GetObject("award_star_gold_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap award_star_gold_3 {
+            get {
+                object obj = ResourceManager.GetObject("award_star_gold_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bullet_go {
             get {
                 object obj = ResourceManager.GetObject("bullet_go", resourceCulture);
@@ -206,6 +226,16 @@ namespace SuperPutty.Properties {
         internal static System.Drawing.Bitmap page_blue {
             get {
                 object obj = ResourceManager.GetObject("page_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paste_plain {
+            get {
+                object obj = ResourceManager.GetObject("paste_plain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

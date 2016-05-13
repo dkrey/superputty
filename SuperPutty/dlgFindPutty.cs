@@ -338,12 +338,14 @@ namespace SuperPutty
             if (!string.IsNullOrEmpty(quickCmd1))
             {
                 SuperPuTTY.Settings.QuickCommand1 = quickCmd1;
+                SuperPuTTY.MainForm.SetQuickCmdToolTip(1, quickCmd1);
             }
 
             string quickCmd2 = this.textBoxQuickCommand2.Text;
             if (!string.IsNullOrEmpty(quickCmd2))
             {
                 SuperPuTTY.Settings.QuickCommand2 = quickCmd2;
+                SuperPuTTY.MainForm.SetQuickCmdToolTip(2, quickCmd2);
             }
 
             if (errors.Count == 0)

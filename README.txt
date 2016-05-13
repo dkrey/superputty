@@ -10,3 +10,6 @@ Previous releases can be found at https://github.com/jimradford/superputty/relea
 Documentation is at https://github.com/jimradford/superputty/wiki/Documentation
 
 Get the latest news and updates on the Facebook page https://www.facebook.com/superputty
+
+Includes Silk Icons
+http://www.famfamfam.com/lab/icons/silk/
