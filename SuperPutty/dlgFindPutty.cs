@@ -159,6 +159,17 @@ namespace SuperPutty
             }
             this.comboSearchMode.SelectedItem = SuperPuTTY.Settings.SessionsSearchMode;
 
+            // Quick Command Buttons
+            if (!String.IsNullOrEmpty(SuperPuTTY.Settings.QuickCommand1))
+            {
+                this.textBoxQuickCommand1.Text = SuperPuTTY.Settings.QuickCommand1;
+            }
+
+            if (!String.IsNullOrEmpty(SuperPuTTY.Settings.QuickCommand2))
+            {
+                this.textBoxQuickCommand2.Text = SuperPuTTY.Settings.QuickCommand2;
+            }
+
             // default layouts
             InitLayouts();
 
@@ -188,6 +199,7 @@ namespace SuperPutty
             this.numericUpDown1.Value = SuperPuTTY.Settings.SaveCommandHistoryDays;
             this.checkBoxAllowPuttyPWArg.Checked = SuperPuTTY.Settings.AllowPlainTextPuttyPasswordArg;
             this.textBoxPuttyDefaultParameters.Text = SuperPuTTY.Settings.PuttyDefaultParameters;
+            this.checkBoxShowClip.Checked = SuperPuTTY.Settings.ShowClipboardContent;
 
             if (SuperPuTTY.IsFirstRun)
             {
@@ -322,6 +334,18 @@ namespace SuperPutty
                 SuperPuTTY.Settings.MinttyExe = mintty;
             }
 
+            string quickCmd1 = this.textBoxQuickCommand1.Text;
+            if (!string.IsNullOrEmpty(quickCmd1))
+            {
+                SuperPuTTY.Settings.QuickCommand1 = quickCmd1;
+            }
+
+            string quickCmd2 = this.textBoxQuickCommand2.Text;
+            if (!string.IsNullOrEmpty(quickCmd2))
+            {
+                SuperPuTTY.Settings.QuickCommand2 = quickCmd2;
+            }
+
             if (errors.Count == 0)
             {
                 SuperPuTTY.Settings.SingleInstanceMode = this.checkSingleInstanceMode.Checked;
@@ -353,6 +377,7 @@ namespace SuperPutty
                 SuperPuTTY.Settings.SaveCommandHistoryDays = (int)this.numericUpDown1.Value;
                 SuperPuTTY.Settings.AllowPlainTextPuttyPasswordArg = this.checkBoxAllowPuttyPWArg.Checked;
                 SuperPuTTY.Settings.PuttyDefaultParameters = this.textBoxPuttyDefaultParameters.Text;
+                SuperPuTTY.Settings.ShowClipboardContent = this.checkBoxShowClip.Checked;
 
                 // save shortcuts
                 KeyboardShortcut[] shortcuts = new KeyboardShortcut[this.Shortcuts.Count];

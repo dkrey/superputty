@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SuperPutty</RootNamespace>
     <AssemblyName>SuperPutty</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -59,6 +59,9 @@
   <PropertyGroup>
     <ApplicationIcon>Apps-utilities-terminal.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -75,11 +78,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.41552, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.2.10.0-beta2\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -128,7 +132,6 @@
     </Compile>
     <Compile Include="Gui\QuickSelectorData.cs">
       <DependentUpon>QuickSelectorData.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Gui\QuickSelectorData.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -408,7 +411,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 und x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -431,6 +434,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Gui\QuickSelectorData.xsc">
       <DependentUpon>QuickSelectorData.xsd</DependentUpon>
     </None>
@@ -442,6 +448,7 @@
     <None Include="Gui\QuickSelectorData.xss">
       <DependentUpon>QuickSelectorData.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\SuperPutty.Data.KeyboardShortcut.datasource" />
     <None Include="Properties\DataSources\SuperPutty.Scp.FileTransferViewItem.datasource" />
     <None Include="Properties\DataSources\SuperPutty.Scp.IBrowserModel.datasource" />
@@ -456,6 +463,7 @@
     <None Include="Resources\script_code.png" />
     <None Include="Resources\folder-up.png" />
     <None Include="Resources\page-blue.png" />
+    <None Include="Resources\favicon.ico" />
     <Content Include="_Lib\WeifenLuo.WinFormsUI.Docking.dll" />
     <None Include="Resources\find.png" />
     <Content Include="_Lib\log4net.dll" />

@@ -27,6 +27,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Threading;
 using WeifenLuo.WinFormsUI.Docking;
 using SuperPutty.Data;
 using log4net;
@@ -92,6 +93,7 @@ namespace SuperPutty
 
             InitializeComponent();
 
+            this.DockPanel = dockPanel1;
             // force toolbar locations...designer likes to flip them around
             this.tsConnect.Location = new System.Drawing.Point(0, 24);
             this.tsCommands.Location = new System.Drawing.Point(0, 49);
@@ -183,6 +185,19 @@ namespace SuperPutty
 
             this.DockPanel.ContentAdded += DockPanel_ContentAdded;
             this.DockPanel.ContentRemoved += DockPanel_ContentRemoved;
+
+            // Add Clipboard monitor timer and refresh after 1 sec
+            DispatcherTimer clipTimer = new DispatcherTimer();
+
+            clipTimer.Interval = TimeSpan.FromSeconds(1);
+            clipTimer.Tick += new EventHandler(clipTimer_Tick);
+            clipTimer.Start();
+
+        }
+
+        private void clipTimer_Tick(object sender, EventArgs e)
+        {
+            if (SuperPuTTY.Settings.ShowClipboardContent)  tsLbClipboard.Text = System.Windows.Forms.Clipboard.GetText();
         }
 
         private void TsCommandHistory_ListChanged(object sender, ListChangedEventArgs e)
@@ -1764,6 +1779,16 @@ namespace SuperPutty
                     }
                 }
             }
+        }
+
+        private void tbBtnQuickCmd1_Click(object sender, EventArgs e)
+        {
+            TrySendCommandsFromToolbar(new CommandData(SuperPuTTY.Settings.QuickCommand1, new KeyEventArgs(Keys.Enter)), !this.tbBtnMaskText.Checked);
+        }
+
+        private void tbBtnQuickCmd2_Click(object sender, EventArgs e)
+        {
+            TrySendCommandsFromToolbar(new CommandData(SuperPuTTY.Settings.QuickCommand2, new KeyEventArgs(Keys.Enter)), !this.tbBtnMaskText.Checked);
         }
     }
 }

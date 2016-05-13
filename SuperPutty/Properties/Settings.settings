@@ -144,7 +144,7 @@
       <Value Profile="(Default)">/home/</Value>
     </Setting>
     <Setting Name="AutoUpdateCheck" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="PscpRootHomePrefix" Type="System.String" Scope="User">
       <Value Profile="(Default)">/</Value>
@@ -161,5 +161,32 @@
     <Setting Name="WinSCPExe" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-</Settings>
+    <Setting Name="AllowPlainTextPuttyPasswordArg" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PuttyDefaultParameters" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PersistCommandBarHistory" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CommandBarHistory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SaveCommandHistoryDays" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ShowClipboardContent" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Action_RenameTab_Shortcut" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="QuickCommand1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="QuickCommand2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>
